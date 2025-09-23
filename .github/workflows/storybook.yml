@@ -4,36 +4,50 @@ on:
   push:
     branches: [ main ]
 
+# 👇 ESTA SECCIÓN ES CRÍTICA para los permisos
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 👇 CONFIGURACIÓN para GitHub Pages
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}  # ← IMPORTANTE: Agrega esto
+    # 👇 ESTO ES IMPORTANTE para el deployment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     
-    - name: Setup Node.js 20
-      uses: actions/setup-node@v3
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
         node-version: '20'
         cache: 'npm'
     
     - name: Install dependencies
       run: npm ci
-      
-    - name: Verify Storybook build locally
-      run: |
-        # Verifica que el build funciona
-        npm run build-storybook
-        
-        # Lista el contenido para debug
-        ls -la dist/ || echo "No dist directory"
-        ls -la dist/storybook/ || echo "No storybook directory"
-      
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    
+    - name: Build Storybook
+      run: npm run build-storybook
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+    
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/storybook
-        force_orphan: true  # ← Fuerza creación de rama
+        path: './dist/storybook'
+    
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
