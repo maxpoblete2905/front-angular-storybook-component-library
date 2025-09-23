@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build-storybook": "ng run catalogo-componentes:build-storybook",
-    "storybook": "ng run catalogo-componentes:storybook"
+    "build:gh-pages": "npm run build-storybook",
+    "deploy:storybook": "npm run build:gh-pages && npx gh-pages -d dist/storybook"
   },
   "prettier": {
     "overrides": [

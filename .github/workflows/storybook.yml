@@ -10,24 +10,30 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # ← IMPORTANTE: Agrega esto
     
-    - name: Setup Node.js 20  # ← CAMBIA de 18 a 20
+    - name: Setup Node.js 20
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # ← Storybook 9 requiere Node 20+
+        node-version: '20'
         cache: 'npm'
     
     - name: Install dependencies
       run: npm ci
       
-    - name: Migrate Storybook configuration
-      run: npx storybook automigrate --config-dir .storybook
-      
-    - name: Build Storybook
-      run: npm run build-storybook
+    - name: Verify Storybook build locally
+      run: |
+        # Verifica que el build funciona
+        npm run build-storybook
+        
+        # Lista el contenido para debug
+        ls -la dist/ || echo "No dist directory"
+        ls -la dist/storybook/ || echo "No storybook directory"
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist/storybook
+        force_orphan: true  # ← Fuerza creación de rama
