@@ -5,19 +5,33 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18'
           cache: 'npm'
-      - run: npm ci
-      - run: mkdir -p src/assets  # Crear carpeta assets en el CI
-      - run: npx storybook build -o dist/storybook
-      - name: Deploy
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: npx storybook build -o dist/storybook
+
+      - name: Create .nojekyll file
+        run: touch dist/storybook/.nojekyll
+
+      - name: List built files
+        run: ls -la dist/storybook/
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist/storybook
+          clean: true
