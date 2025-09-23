@@ -8,9 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run catalogo-componentes:storybook",
-    "build-storybook": "ng run catalogo-componentes:build-storybook",
-    "build:gh-pages": "npm run build-storybook && npx angular-cli-ghpages --dir=dist/storybook",
-    "deploy:storybook": "npm run build:gh-pages"
+    "build-storybook": "ng run catalogo-componentes:build-storybook"
   },
   "prettier": {
     "overrides": [
@@ -30,7 +28,6 @@
     "@angular/forms": "^20.1.0",
     "@angular/platform-browser": "^20.1.0",
     "@angular/router": "^20.1.0",
-    "@storybook/addon-actions": "^9.0.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -41,10 +38,9 @@
     "@angular/cli": "^20.1.4",
     "@angular/compiler-cli": "^20.1.0",
     "@compodoc/compodoc": "^1.1.30",
-    "@storybook/addon-docs": "^9.1.5",
-    "@storybook/addon-onboarding": "^9.1.5",
-    "@storybook/angular": "^9.1.5",
+    "@storybook/angular": "^9.1.8",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^18.19.127",
     "angular-cli-ghpages": "^2.0.3",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",

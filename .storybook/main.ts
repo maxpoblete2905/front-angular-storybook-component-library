@@ -1,19 +1,16 @@
 import type { StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
-  stories: [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
-  ],
-  addons: [
-    "@storybook/addon-docs",
-    "@storybook/addon-onboarding"
-  ],
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [],
   framework: {
-    name: "@storybook/angular",
-    options: {}
+    name: '@storybook/angular',
+    options: {},
   },
-  staticDirs: ['../src/assets'],
+  // ESTA es la clave para la documentación en SB9:
+  docs: {
+    defaultName: 'Documentation',
+  },
 };
 
 export default config;
