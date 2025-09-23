@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@storybook/angular:build-storybook",
           "options": {
             "browser": "src/main.ts",
             "polyfills": [
@@ -87,7 +87,7 @@
           }
         },
         "storybook": {
-          "builder": "@storybook/angular:start-storybook",
+          "builder": "@storybook/angular:storybook",
           "options": {
             "configDir": ".storybook",
             "browserTarget": "catalogo-componentes:build",

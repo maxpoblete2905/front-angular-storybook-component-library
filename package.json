@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run catalogo-componentes:storybook",
-    "build-storybook": "ng run catalogo-componentes:build-storybook"
+    "build-storybook": "ng run catalogo-componentes:build-storybook",
+    "build:gh-pages": "npm run build-storybook && npx angular-cli-ghpages --dir=dist/storybook",
+    "deploy:storybook": "npm run build:gh-pages"
   },
   "prettier": {
     "overrides": [
@@ -43,6 +45,7 @@
     "@storybook/addon-onboarding": "^9.1.5",
     "@storybook/angular": "^9.1.5",
     "@types/jasmine": "~5.1.0",
+    "angular-cli-ghpages": "^2.0.3",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
