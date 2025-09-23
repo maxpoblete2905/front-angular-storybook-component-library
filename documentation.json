@@ -1,22 +1,1014 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "User",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "file": "src/app/interfaces/user.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
     "injectables": [],
     "guards": [],
     "interceptors": [],
     "classes": [],
     "directives": [],
-    "components": [],
+    "components": [
+        {
+            "name": "App",
+            "id": "component-App-9d403a92c569a8e7a24acf74c26728fa173c3718599c426dd0d72e158137202ebef91844613f42efb15e26815a5f922ac4df957d437398d834479088e8237d73",
+            "file": "src/app/app.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"app-container\">\n  <h1>{{ title() }} - Storybook Demo</h1>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "signal('catalogo-componentes')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, signal } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  template: `\r\n    <div class=\"app-container\">\r\n      <h1>{{ title() }} - Storybook Demo</h1>\r\n    </div>\r\n  `\r\n})\r\nexport class App {\r\n  protected readonly title = signal('catalogo-componentes');\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-211b42f5fea7e33088400f479aff82adf83bc86302b7b0e8c3facc073d86cb62153d00f340a43ee7bcc2e986f65a3b18583e88e9b0e2cb40c25444ca67e1d7b5",
+            "file": "src/app/components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nWhat background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 627,
+                            "end": 640,
+                            "kind": 327,
+                            "id": 0,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "tagName": {
+                                "pos": 628,
+                                "end": 636,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nIs this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHow large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 22,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nOptional click handler",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 34,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #555ab9;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 36
+                    }
+                }
+            },
+            "templateData": "<button type=\"button\" (click)=\"onClick.emit($event)\" [ngClass]=\"classes\"\r\n  [ngStyle]=\"{ 'background-color': backgroundColor }\">\r\n  {{ label }}\r\n</button>\r\n"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-dc38f5a91a3564189e94de4efaee4c67b4702938abb7641ead117813700faf2d71adbcc28eb57ad8afcc63f0c9d3cb77ccde884685ecd0668cd5963097eaab7b",
+            "file": "src/app/components/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-card",
+            "styleUrls": [
+                "./card.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "avatar",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 47,
+                    "required": false
+                },
+                {
+                    "name": "avatarSize",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 48,
+                    "required": false
+                },
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 65,
+                    "required": false
+                },
+                {
+                    "name": "content",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "required": false
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false, { transform: booleanAttribute }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "required": false
+                },
+                {
+                    "name": "fallbackImage",
+                    "defaultValue": "'/assets/fallback-image.jpg'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
+                    "required": false
+                },
+                {
+                    "name": "footerText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 59,
+                    "required": false
+                },
+                {
+                    "name": "header",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 50,
+                    "required": false
+                },
+                {
+                    "name": "imageAlt",
+                    "defaultValue": "'Card image'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29,
+                    "required": false
+                },
+                {
+                    "name": "imageBadge",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30,
+                    "required": false
+                },
+                {
+                    "name": "imageUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28,
+                    "required": false
+                },
+                {
+                    "name": "isFavorited",
+                    "defaultValue": "false, { transform: booleanAttribute }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 56,
+                    "required": false
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "false, { transform: booleanAttribute }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "required": false
+                },
+                {
+                    "name": "maxWidth",
+                    "defaultValue": "400, { transform: numberAttribute }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "required": false
+                },
+                {
+                    "name": "primaryButtonText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 54,
+                    "required": false
+                },
+                {
+                    "name": "secondaryButtonText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 55,
+                    "required": false
+                },
+                {
+                    "name": "showActions",
+                    "defaultValue": "true, { transform: booleanAttribute }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 53,
+                    "required": false
+                },
+                {
+                    "name": "showFooter",
+                    "defaultValue": "false, { transform: booleanAttribute }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 60,
+                    "required": false
+                },
+                {
+                    "name": "showHeader",
+                    "defaultValue": "true, { transform: booleanAttribute }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 49,
+                    "required": false
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CardSize",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "required": false
+                },
+                {
+                    "name": "subtitle",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "required": false
+                },
+                {
+                    "name": "timestamp",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 61,
+                    "required": false
+                },
+                {
+                    "name": "timestampFormat",
+                    "defaultValue": "'mediumDate'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 62,
+                    "required": false
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | undefined",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "required": false
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CardVariant",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": false
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onFavorite",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 70,
+                    "required": false
+                },
+                {
+                    "name": "onMenu",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Event",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 71,
+                    "required": false
+                },
+                {
+                    "name": "onPrimaryAction",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Event",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 68,
+                    "required": false
+                },
+                {
+                    "name": "onSecondaryAction",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Event",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69,
+                    "required": false
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "avatarSizeClass",
+                    "defaultValue": "computed(() => `avatar--${this.avatarSize()}`)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 96
+                },
+                {
+                    "name": "cardClasses",
+                    "defaultValue": "computed(() => {\r\n    const classes = ['storybook-card'];\r\n\r\n    // Variante\r\n    classes.push(`card--${this.variant()}`);\r\n\r\n    // Tamaño\r\n    classes.push(`card--${this.size()}`);\r\n\r\n    // Estados\r\n    if (this.disabled()) classes.push('card--disabled');\r\n    if (this.loading()) classes.push('card--loading');\r\n    if (this.imageUrl()) classes.push('card--with-image');\r\n\r\n    return classes;\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 79
+                },
+                {
+                    "name": "displayImageUrl",
+                    "defaultValue": "computed(() => {\r\n    \r\n    const url = this.imageUrl();\r\n    if (url && !this.hasImageError()) {\r\n      return url;\r\n    }\r\n    return this.fallbackImage();\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "hasImageError",
+                    "defaultValue": "signal(false)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 44,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handleImageError",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, input, output, booleanAttribute, numberAttribute, signal, computed } from '@angular/core';\r\n\r\nexport type CardVariant = 'default' | 'highlighted' | 'elevated' | 'bordered';\r\nexport type CardSize = 'small' | 'medium' | 'large';\r\n\r\n@Component({\r\n  selector: 'storybook-card',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './card.component.html',\r\n  styleUrls: ['./card.component.css']\r\n})\r\nexport class CardComponent {\r\n  // Estados y variantes con valores por defecto\r\n  variant = input<CardVariant>('default');\r\n  size = input<CardSize>('medium');\r\n  disabled = input(false, { transform: booleanAttribute });\r\n  loading = input(false, { transform: booleanAttribute });\r\n\r\n  // Contenido principal\r\n  title = input<string | undefined>();\r\n  subtitle = input<string | undefined>();\r\n  content = input<string | undefined>();\r\n  maxWidth = input(400, { transform: numberAttribute });\r\n\r\n  // Imagen - usamos una señal separada para manejar el error\r\n  imageUrl = input<string | undefined>();\r\n  imageAlt = input('Card image');\r\n  imageBadge = input<string | undefined>();\r\n  fallbackImage = input('/assets/fallback-image.jpg');\r\n\r\n  // Computed property para obtener la URL a mostrar\r\n  displayImageUrl = computed(() => {\r\n    \r\n    const url = this.imageUrl();\r\n    if (url && !this.hasImageError()) {\r\n      return url;\r\n    }\r\n    return this.fallbackImage();\r\n  });\r\n\r\n  // Señal para rastrear errores de imagen\r\n  private hasImageError = signal(false);\r\n\r\n  // Avatar y header\r\n  avatar = input<string | undefined>();\r\n  avatarSize = input<'small' | 'medium' | 'large'>('medium');\r\n  showHeader = input(true, { transform: booleanAttribute });\r\n  header = input<string | undefined>();\r\n\r\n  // Acciones\r\n  showActions = input(true, { transform: booleanAttribute });\r\n  primaryButtonText = input<string | undefined>();\r\n  secondaryButtonText = input<string | undefined>();\r\n  isFavorited = input(false, { transform: booleanAttribute });\r\n\r\n  // Footer\r\n  footerText = input<string | undefined>();\r\n  showFooter = input(false, { transform: booleanAttribute });\r\n  timestamp = input<Date | undefined>();\r\n  timestampFormat = input('mediumDate');\r\n\r\n  // Estilos\r\n  backgroundColor = input<string | undefined>();\r\n\r\n  // Eventos con output (nueva sintaxis)\r\n  onPrimaryAction = output<Event>();\r\n  onSecondaryAction = output<Event>();\r\n  onFavorite = output<boolean>();\r\n  onMenu = output<Event>();\r\n\r\n  // Manejar error de imagen\r\n  handleImageError() {\r\n    this.hasImageError.set(true);\r\n  }\r\n\r\n  // Métodos computados\r\n  cardClasses = computed(() => {\r\n    const classes = ['storybook-card'];\r\n\r\n    // Variante\r\n    classes.push(`card--${this.variant()}`);\r\n\r\n    // Tamaño\r\n    classes.push(`card--${this.size()}`);\r\n\r\n    // Estados\r\n    if (this.disabled()) classes.push('card--disabled');\r\n    if (this.loading()) classes.push('card--loading');\r\n    if (this.imageUrl()) classes.push('card--with-image');\r\n\r\n    return classes;\r\n  });\r\n\r\n  avatarSizeClass = computed(() => `avatar--${this.avatarSize()}`);\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-card {\r\n  border-radius: 12px;\r\n  overflow: hidden;\r\n  transition: all 0.3s ease;\r\n  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;\r\n  background: white;\r\n  box-sizing: border-box;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n/* Variantes */\r\n.card--default {\r\n  border: 1px solid #e1e5e9;\r\n}\r\n\r\n.card--highlighted {\r\n  border: 2px solid #3b82f6;\r\n  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1);\r\n}\r\n\r\n.card--elevated {\r\n  border: none;\r\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\r\n}\r\n\r\n.card--bordered {\r\n  border: 2px solid #d1d5db;\r\n  background: #f9fafb;\r\n}\r\n\r\n/* Tamaños */\r\n.card--small { max-width: 300px; }\r\n.card--medium { max-width: 400px; }\r\n.card--large { max-width: 500px; }\r\n\r\n/* Estados */\r\n.card--disabled {\r\n  opacity: 0.6;\r\n  pointer-events: none;\r\n}\r\n\r\n.card--loading {\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n\r\n.card--loading::after {\r\n  content: '';\r\n  position: absolute;\r\n  top: 0;\r\n  left: -100%;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);\r\n  animation: loading 1.5s infinite;\r\n}\r\n\r\n@keyframes loading {\r\n  0% { left: -100%; }\r\n  100% { left: 100%; }\r\n}\r\n\r\n/* Header */\r\n.card-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: flex-start;\r\n  padding: 16px 20px 12px;\r\n  border-bottom: 1px solid #f1f5f9;\r\n}\r\n\r\n.header-content {\r\n  display: flex;\r\n  align-items: flex-start;\r\n  gap: 12px;\r\n  flex: 1;\r\n}\r\n\r\n.avatar {\r\n  border-radius: 50%;\r\n  object-fit: cover;\r\n  flex-shrink: 0;\r\n}\r\n\r\n.avatar--small { width: 32px; height: 32px; }\r\n.avatar--medium { width: 40px; height: 40px; }\r\n.avatar--large { width: 48px; height: 48px; }\r\n\r\n.header-text {\r\n  flex: 1;\r\n  min-width: 0;\r\n}\r\n\r\n.card-title {\r\n  margin: 0 0 4px 0;\r\n  font-size: 1.125rem;\r\n  font-weight: 600;\r\n  color: #1f2937;\r\n  line-height: 1.4;\r\n}\r\n\r\n.card-subtitle {\r\n  margin: 0;\r\n  font-size: 0.875rem;\r\n  color: #6b7280;\r\n  line-height: 1.4;\r\n}\r\n\r\n.header-actions {\r\n  display: flex;\r\n  gap: 8px;\r\n  margin-left: 12px;\r\n}\r\n\r\n.icon-button {\r\n  background: none;\r\n  border: none;\r\n  padding: 6px;\r\n  border-radius: 6px;\r\n  cursor: pointer;\r\n  font-size: 16px;\r\n  transition: all 0.2s ease;\r\n  color: #6b7280;\r\n\r\n  &:hover {\r\n    background: #f3f4f6;\r\n    color: #374151;\r\n  }\r\n\r\n  &.favorited {\r\n    color: #ef4444;\r\n  }\r\n}\r\n\r\n/* Imagen */\r\n.card-image {\r\n  position: relative;\r\n  width: 100%;\r\n  height: 200px;\r\n  overflow: hidden;\r\n\r\n  img {\r\n    width: 100%;\r\n    height: 100%;\r\n    object-fit: cover;\r\n    transition: transform 0.3s ease;\r\n  }\r\n}\r\n\r\n.storybook-card:hover .card-image img {\r\n  transform: scale(1.05);\r\n}\r\n\r\n.image-badge {\r\n  position: absolute;\r\n  top: 12px;\r\n  right: 12px;\r\n  background: #ef4444;\r\n  color: white;\r\n  padding: 4px 8px;\r\n  border-radius: 12px;\r\n  font-size: 0.75rem;\r\n  font-weight: 600;\r\n}\r\n\r\n/* Contenido */\r\n.card-content {\r\n  padding: 16px 20px;\r\n  flex: 1;\r\n}\r\n\r\n.card-text {\r\n  margin: 0;\r\n  color: #4b5563;\r\n  line-height: 1.6;\r\n  font-size: 0.875rem;\r\n}\r\n\r\n/* Acciones */\r\n.card-actions {\r\n  padding: 0 20px 16px;\r\n  display: flex;\r\n  gap: 12px;\r\n  justify-content: flex-end;\r\n}\r\n\r\n.btn-primary, .btn-secondary {\r\n  padding: 8px 16px;\r\n  border: none;\r\n  border-radius: 6px;\r\n  font-size: 0.875rem;\r\n  font-weight: 500;\r\n  cursor: pointer;\r\n  transition: all 0.2s ease;\r\n\r\n  &:disabled {\r\n    opacity: 0.5;\r\n    cursor: not-allowed;\r\n  }\r\n}\r\n\r\n.btn-primary {\r\n  background: #3b82f6;\r\n  color: white;\r\n\r\n  &:hover:not(:disabled) {\r\n    background: #2563eb;\r\n  }\r\n}\r\n\r\n.btn-secondary {\r\n  background: #f3f4f6;\r\n  color: #374151;\r\n  border: 1px solid #d1d5db;\r\n\r\n  &:hover:not(:disabled) {\r\n    background: #e5e7eb;\r\n  }\r\n}\r\n\r\n/* Footer */\r\n.card-footer {\r\n  padding: 12px 20px;\r\n  border-top: 1px solid #f1f5f9;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  background: #fafbfc;\r\n}\r\n\r\n.footer-text, .timestamp {\r\n  font-size: 0.75rem;\r\n  color: #6b7280;\r\n}\r\n\r\n.timestamp {\r\n  color: #9ca3af;\r\n}\r\n\r\n/* Responsive */\r\n@media (max-width: 480px) {\r\n  .card-header {\r\n    padding: 12px 16px 8px;\r\n    flex-direction: column;\r\n    gap: 12px;\r\n  }\r\n\r\n  .header-actions {\r\n    margin-left: 0;\r\n    align-self: flex-end;\r\n  }\r\n\r\n  .card-actions {\r\n    flex-direction: column;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./card.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"card\" [ngClass]=\"cardClasses()\" [ngStyle]=\"{\r\n        'max-width': maxWidth() + 'px',\r\n        'background-color': backgroundColor()\r\n      }\">\r\n  <!-- Header -->\r\n  @if (showHeader() || header() || avatar()) {\r\n  <div class=\"card-header\">\r\n    <div class=\"header-content\">\r\n      @if (avatar()) {\r\n      <img [src]=\"avatar()!\" alt=\"Avatar\" class=\"avatar\" [ngClass]=\"avatarSizeClass()\">\r\n      }\r\n      <div class=\"header-text\">\r\n        @if (title()) {\r\n        <h3 class=\"card-title\">{{ title() }}</h3>\r\n        }\r\n        @if (subtitle()) {\r\n        <p class=\"card-subtitle\">{{ subtitle() }}</p>\r\n        }\r\n      </div>\r\n    </div>\r\n\r\n    @if (showActions()) {\r\n    <div class=\"header-actions\">\r\n      <button class=\"icon-button\" (click)=\"onFavorite.emit(!isFavorited())\" [class.favorited]=\"isFavorited()\">\r\n        ♥\r\n      </button>\r\n      <button class=\"icon-button\" (click)=\"onMenu.emit($event)\">\r\n        ⋮\r\n      </button>\r\n    </div>\r\n    }\r\n  </div>\r\n  }\r\n\r\n  <!-- Image -->\r\n  @if (displayImageUrl()) {\r\n  <div class=\"card-image\">\r\n    <img [src]=\"displayImageUrl()!\" [alt]=\"imageAlt()\" (error)=\"handleImageError()\">\r\n    @if (imageBadge()) {\r\n    <div class=\"image-badge\">{{ imageBadge() }}</div>\r\n    }\r\n  </div>\r\n  }\r\n\r\n  <!-- Content -->\r\n  <div class=\"card-content\">\r\n    <ng-content></ng-content>\r\n    @if (content()) {\r\n    <p class=\"card-text\">{{ content() }}</p>\r\n    }\r\n  </div>\r\n\r\n  <!-- Actions -->\r\n  @if (showActions() || primaryButtonText() || secondaryButtonText()) {\r\n  <div class=\"card-actions\">\r\n    @if (secondaryButtonText()) {\r\n    <button class=\"btn-secondary\" (click)=\"onSecondaryAction.emit($event)\" [disabled]=\"disabled()\">\r\n      {{ secondaryButtonText() }}\r\n    </button>\r\n    }\r\n    @if (primaryButtonText()) {\r\n    <button class=\"btn-primary\" (click)=\"onPrimaryAction.emit($event)\" [disabled]=\"disabled()\">\r\n      {{ primaryButtonText() }}\r\n    </button>\r\n    }\r\n  </div>\r\n  }\r\n\r\n  <!-- Footer -->\r\n  @if (showFooter() || footerText() || timestamp()) {\r\n  <div class=\"card-footer\">\r\n    @if (footerText()) {\r\n    <span class=\"footer-text\">{{ footerText() }}</span>\r\n    }\r\n    @if (timestamp()) {\r\n    <span class=\"timestamp\">{{ timestamp() | date:timestampFormat() }}</span>\r\n    }\r\n  </div>\r\n  }\r\n</div>"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-a3596bd22ee0ea309459c35d1a71fdc15200c6ec51513c630f868140b866b72665b7050bfdb08d63846abc7203070f3657479eac835b979a82e21311824acc31",
+            "file": "src/app/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 65,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 74,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 68,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 71,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from '../button/button.component';\nimport { User } from '@/app/interfaces/user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 6px 0 6px 10px;\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  margin-right: 10px;\n  color: #333;\n  font-size: 14px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-9b620c0e57273058d3aa101ef6335eeee4f6ac3f9696a8bc05e843d50b12fbee8dc7307dc4597441a4c29b9d675013c1d875d759228b82748b9cdfcb1d66c8d1",
+            "file": "src/app/components/page/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport type { User } from '../../interfaces/user';\nimport { HeaderComponent } from '../header/header.component';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-page {\n  margin: 0 auto;\n  padding: 48px 20px;\n  max-width: 600px;\n  color: #333;\n  font-size: 14px;\n  line-height: 24px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-page h2 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 0 4px;\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  color: inherit;\n}\n\n.storybook-page ul {\n  margin: 1em 0;\n  padding-left: 30px;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 10px;\n  border-radius: 1em;\n  background: #e7fdd8;\n  padding: 4px 12px;\n  color: #357a14;\n  font-weight: 700;\n  font-size: 11px;\n  line-height: 12px;\n}\n\n.storybook-page .tip-wrapper {\n  margin-top: 40px;\n  margin-bottom: 40px;\n  font-size: 13px;\n  line-height: 20px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  vertical-align: top;\n  margin-top: 3px;\n  margin-right: 4px;\n  width: 12px;\n  height: 12px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        }
+    ],
     "modules": [],
-    "miscellaneous": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [\r\n    provideBrowserGlobalErrorListeners(),\r\n    provideZoneChangeDetection({ eventCoalescing: true }),\r\n  ]\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "CardSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"small\" | \"medium\" | \"large\"",
+                "file": "src/app/components/card/card.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
+            {
+                "name": "CardVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"default\" | \"highlighted\" | \"elevated\" | \"bordered\"",
+                "file": "src/app/components/card/card.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [\r\n    provideBrowserGlobalErrorListeners(),\r\n    provideZoneChangeDetection({ eventCoalescing: true }),\r\n  ]\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "src/app/components/card/card.component.ts": [
+                {
+                    "name": "CardSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"small\" | \"medium\" | \"large\"",
+                    "file": "src/app/components/card/card.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                },
+                {
+                    "name": "CardVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"default\" | \"highlighted\" | \"elevated\" | \"bordered\"",
+                    "file": "src/app/components/card/card.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ]
+        }
+    },
     "routes": {
         "name": "<root>",
         "kind": "module",
         "children": []
     },
     "coverage": {
-        "count": 0,
+        "count": 9,
         "status": "low",
-        "files": []
+        "files": [
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "App",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/35",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "CardSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "CardVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/page/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interfaces/user.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
     }
 }
