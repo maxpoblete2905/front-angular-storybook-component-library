@@ -11,10 +11,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Setup Node.js
+    - name: Setup Node.js 20  # ← CAMBIA de 18 a 20
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: '20'  # ← Storybook 9 requiere Node 20+
         cache: 'npm'
     
     - name: Install dependencies
@@ -24,7 +24,7 @@ jobs:
       run: npx storybook automigrate --config-dir .storybook
       
     - name: Build Storybook
-      run: npm run build-storybook  # Esto ejecuta ng run catalogo-componentes:build-storybook
+      run: npm run build-storybook
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
