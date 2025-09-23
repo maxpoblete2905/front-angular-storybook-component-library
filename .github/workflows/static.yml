@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Storybook to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -15,14 +15,12 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -31,13 +29,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          # Upload entire repository
-          path: '.'
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build Storybook
+        run: npx storybook build -o dist/storybook
+        
+      - name: Create .nojekyll file
+        run: touch dist/storybook/.nojekyll
+        
+      - name: Verify Storybook build
+        run: |
+          echo "=== Contenido de dist/storybook ==="
+          ls -la dist/storybook/
+          echo "=== Verificando que index.html existe ==="
+          test -f dist/storybook/index.html && echo "✅ index.html encontrado" || echo "❌ index.html NO encontrado"
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload ONLY the Storybook build folder
+          path: 'dist/storybook'
+          
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
