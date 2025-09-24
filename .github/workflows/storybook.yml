@@ -3,8 +3,6 @@ name: Deploy Storybook
 on:
   push:
     branches: [ main ]
-
-# 👇 ESTO FALTA y es crucial
 permissions:
   contents: write
 
