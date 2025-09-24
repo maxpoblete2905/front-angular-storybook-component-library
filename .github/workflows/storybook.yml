@@ -23,14 +23,12 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
         
-      - name: List build files (for debugging)
-        run: ls -la dist/storybook/
-        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/storybook
-          publish_branch: gh-pages
-          force_orphan: true
+          # CAMBIA esto: gh-pages → main
+          publish_branch: main
+          force_orphan: false
           keep_files: false
