@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/angular';
 
 const preview: Preview = {
+  args: { theme: 'light' },
   parameters: {
     controls: {
       matchers: {
@@ -8,6 +9,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    
   },
 };
 
